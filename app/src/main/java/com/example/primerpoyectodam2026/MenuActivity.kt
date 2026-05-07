@@ -20,10 +20,6 @@ class MenuActivity : AppCompatActivity() {
             val vista = layoutInflater.inflate(R.layout.dialog_registro, null) //objeto para convertir layout en vistas
 
             val etNombre = vista.findViewById<EditText>(R.id.etNombre)
-            val etApellido = vista.findViewById<EditText>(R.id.etApellido)
-            val etDni = vista.findViewById<EditText>(R.id.etDni)
-            val etEmail = vista.findViewById<EditText>(R.id.etEmail)
-
 
             val dialog = AlertDialog.Builder(this)
                 .setTitle("Registro")
