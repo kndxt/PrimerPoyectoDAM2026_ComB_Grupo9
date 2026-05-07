@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -23,7 +23,7 @@
         </TextView>
         <!-- CARD 1 -->
         <LinearLayout
-            android:id="@+id/cardSocios"
+            android:id="@+id/cardRegistro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -35,10 +35,10 @@
         android:focusable="true"    >
 
             <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@android:drawable/ic_menu_myplaces"
-            />
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                app:srcCompat="@drawable/ic_person_add" />
             <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,13 +47,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Socios"
+                android:text="Registrar"
                 android:textSize="20dp"
+                android:textColor="#000000"
                 android:textStyle="bold"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ver y gestionar socios"
+                    android:textColor="#000000"
                     android:textSize="16dp">
 
                 </TextView>
@@ -61,20 +63,67 @@
             </LinearLayout>
         </LinearLayout>
         <!-- CARD 1 -->
+
         <!-- CARD 2 -->
         <LinearLayout
+            android:id="@+id/cardVencimientos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="16dp"
             android:layout_marginBottom="12dp"
             android:elevation="4dp"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"   >
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@android:drawable/ic_menu_myplaces"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                app:srcCompat="@drawable/ic_list_alt" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vencimientos"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="Ver lista de vencimientos"
+                    android:textSize="16dp">
+
+                </TextView>
+
+            </LinearLayout>
+        </LinearLayout>
+        <!-- CARD 2 -->
+        <!-- CARD 3 -->
+        <LinearLayout
+            android:id="@+id/cardAbono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="4dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"   >
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="2dp"
+                app:srcCompat="@drawable/ic_pay"
                 />
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -84,20 +133,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Socios"
+                    android:text="Abonar"
                     android:textSize="20dp"
+                    android:textColor="#000000"
                     android:textStyle="bold"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ver y gestionar socios"
+                    android:textColor="#000000"
+                    android:text="Gestionar pagos"
                     android:textSize="16dp">
 
                 </TextView>
 
             </LinearLayout>
         </LinearLayout>
-        <!-- CARD 2 -->
+        <!-- CARD 3 -->
+
     </LinearLayout>
 
 </ScrollView>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="vertical"
+    >
+
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="Nombre">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/etApellido"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="Apellido"
+        >
+    </EditText>
+    <EditText
+        android:id="@+id/etDni"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="Dni"
+        >
+    </EditText>
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        >
+    </EditText>
+
+    <CheckBox
+        android:id="@+id/etAptoFisico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Apto Físico"
+        android:textColorLink="#009688">
+
+    </CheckBox>
+    <Spinner
+        android:id="@+id/idOpciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:entries="@array/opciones_dialogo" />
+
+</LinearLayout>
