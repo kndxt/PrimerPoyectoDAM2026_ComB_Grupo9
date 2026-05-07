@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">PrimerPoyectoDAM2026</string>
+    <string-array name="opciones_dialogo">
+        <item>Socio</item>
+        <item>No socio</item>
+    </string-array>
+    <string name="titulo_vencimientos">Lista de Vencimientos</string>
+    <string-array name="nombres_personas">
+        <item>Juan Pérez</item>
+        <item>María García</item>
+        <item>Carlos Rodríguez</item>
+        <item>Ana Martínez</item>
+        <item>Luis Fernández</item>
+    </string-array>
 </resources>
