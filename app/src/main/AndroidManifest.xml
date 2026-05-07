@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimerPoyectoDAM2026">
         <activity
+            android:name=".PagoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DisciplinasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuAbonarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CredencialActivity"
+            android:exported="false" />
+        <activity
             android:name=".MenuActivity"
             android:exported="false" />
         <activity
