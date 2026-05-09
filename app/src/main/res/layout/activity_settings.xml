@@ -14,49 +14,73 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Menu Principal"
+            android:text="Ajustes"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#000000"
             android:gravity="center"
             android:layout_marginBottom="20dp">
         </TextView>
-        <!-- CARD 1 -->
         <LinearLayout
-            android:id="@+id/cardRegistro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:layout_marginBottom="12dp"
-        android:elevation="4dp"
-        android:background="@color/white"
-        android:clickable="true"
-        android:focusable="true"    >
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="5dp"
-                app:srcCompat="@drawable/ic_person_add" />
-            <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginStart="15dp">
+            android:padding="60dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:contentDescription="@string/app_name"
+                android:layout_height="120dp"
+                android:gravity="center_vertical"
+                app:srcCompat="@drawable/ic_user">
+            </ImageView>
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Administrador"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#000000">
+            </TextView>
+        </LinearLayout>
+        <!-- CARD 1 -->
+        <LinearLayout
+            android:id="@+id/cardNotis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="4dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:contentDescription="notis"
+                app:srcCompat="@drawable/ic_notis" />
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Registrar"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:textStyle="bold"/>
+                android:orientation="vertical"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="9dp"
+                android:gravity="center">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ver y gestionar socios"
+                    android:text="Notificaciones"
                     android:textColor="#000000"
-                    android:textSize="16dp">
+                    android:textSize="20sp"
+                    android:textStyle="normal">
+
 
                 </TextView>
 
@@ -66,7 +90,7 @@
 
         <!-- CARD 2 -->
         <LinearLayout
-            android:id="@+id/cardVencimientos"
+            android:id="@+id/cardAyuda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -78,37 +102,34 @@
             android:focusable="true"   >
 
             <ImageView
-                android:layout_width="35dp"
+                android:layout_width="30dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
-                app:srcCompat="@drawable/ic_list_alt" />
+                android:contentDescription="help"
+                app:srcCompat="@drawable/ic_help" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginStart="15dp">
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="9dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vencimientos"
+                    android:text="Ayuda y Comentarios"
                     android:textColor="#000000"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:text="Ver lista de vencimientos"
-                    android:textSize="16dp">
+                    android:textSize="20sp"
+                    android:textStyle="normal"/>
 
-                </TextView>
 
             </LinearLayout>
+
+
         </LinearLayout>
         <!-- CARD 2 -->
-        <!-- CARD 3 -->
+        <!-- CARD 2 -->
         <LinearLayout
-            android:id="@+id/cardAbono"
+            android:id="@+id/cardLogOut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -120,42 +141,34 @@
             android:focusable="true"   >
 
             <ImageView
-                android:layout_width="35dp"
+                android:layout_width="30dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="2dp"
-                app:srcCompat="@drawable/ic_pay"
-                />
+                android:layout_marginTop="5dp"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@drawable/ic_logout" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginStart="15dp">
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="9dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Abonar"
-                    android:textSize="20dp"
+                    android:text="Cerrar Sesión"
                     android:textColor="#000000"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:text="Gestionar pagos"
-                    android:textSize="16dp">
+                    android:textSize="20sp"
+                    android:textStyle="normal"/>
 
-                </TextView>
 
             </LinearLayout>
-        </LinearLayout>
-        <Button
-            android:id="@+id/bntConfig"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Configuración" />
 
-        <!-- CARD 3 -->
+
+        </LinearLayout>
+        <!-- CARD 2 -->
 
     </LinearLayout>
+
+
 
 </ScrollView>
