@@ -12,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimerPoyectoDAM2026">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LogoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuscarNoSocioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SuscripcionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuscarPersonaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuscarSocioActivity"
+            android:exported="false" />
+        <activity
             android:name=".Pago_AcreditadoActivity"
             android:exported="false" />
         <activity

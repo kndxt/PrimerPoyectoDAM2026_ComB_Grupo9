@@ -1,5 +1,6 @@
 package com.example.primerpoyectodam2026
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.EditText
@@ -8,11 +9,13 @@ import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.Button
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+
         val cardSocios = findViewById<LinearLayout>(R.id.cardRegistro)
         cardSocios.setOnClickListener {
             //Toast.makeText(this, "Entrando a Socios", Toast.LENGTH_SHORT).show()
@@ -26,8 +29,6 @@ class MenuActivity : AppCompatActivity() {
                 .setView(vista)
                 .setPositiveButton("Guardar") {_, _ ->
                     val nombreToString = etNombre.text.toString()
-
-
 
                     Toast.makeText(this, "Socio: $nombreToString", Toast.LENGTH_LONG).show()
                 }
@@ -61,6 +62,15 @@ class MenuActivity : AppCompatActivity() {
                 .setPositiveButton("Cerrar", null)
                 .create()
             dialog.show()
+
+
+        }
+
+        //Prueba de configuración
+        val btnIrConfig = findViewById<Button>(R.id.bntConfig)
+        btnIrConfig.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
         }
     }
 }
