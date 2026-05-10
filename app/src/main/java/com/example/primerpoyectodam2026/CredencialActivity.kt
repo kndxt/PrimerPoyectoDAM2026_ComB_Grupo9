@@ -9,6 +9,12 @@ class CredencialActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_credencial)
+
+
+    val btnIrMenu = findViewById<Button>(R.id.btnIrMenu)
+    btnIrMenu.setOnClickListener {
+        val intent = Intent(this, MenuActivity::class.java)
+        startActivity(intent)}
     }
 
 }

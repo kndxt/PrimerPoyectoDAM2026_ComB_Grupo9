@@ -17,7 +17,7 @@
         android:text="Iniciar Sesión"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="@color/verde"/>
+        android:textColor="@color/black"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -47,7 +47,7 @@
         android:layout_marginTop="24dp"
         android:text="Ingresar"
         android:textColor="@color/white"
-        android:backgroundTint="@color/verde"
+        android:backgroundTint="@color/black"
         />
 
 </LinearLayout>

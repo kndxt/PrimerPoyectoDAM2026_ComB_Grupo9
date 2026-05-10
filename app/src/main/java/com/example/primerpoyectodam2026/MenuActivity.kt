@@ -31,6 +31,9 @@ class MenuActivity : AppCompatActivity() {
                     val nombreToString = etNombre.text.toString()
 
                     Toast.makeText(this, "Socio: $nombreToString", Toast.LENGTH_LONG).show()
+
+                    val intento = Intent(this, CredencialActivity::class.java)
+                    startActivity(intent)
                 }
                 .setNegativeButton("Cancelar", null)
                 .create()
@@ -72,5 +75,13 @@ class MenuActivity : AppCompatActivity() {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
+
+        val cardAbono = findViewById<LinearLayout>(R.id.cardAbono)
+        cardAbono.setOnClickListener{
+            val intent = Intent(this, MenuAbonarActivity::class.java)
+            startActivity(intent)
+
+        }
+
     }
 }

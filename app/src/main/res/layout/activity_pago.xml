@@ -61,7 +61,7 @@
 
 
     <Button
-        android:id="@+id/btnVolverMenu"
+        android:id="@+id/btnSiguiente"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

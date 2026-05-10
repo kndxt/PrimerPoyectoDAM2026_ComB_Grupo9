@@ -235,14 +235,14 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnVolverMenu"
-            android:layout_marginTop="20dp"
+            android:id="@+id/pagoDiaria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Siguiente"
-            android:backgroundTint="@color/black"/>
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/black"
+            android:text="Siguiente" />
 
- </LinearLayout>
+    </LinearLayout>
 
 
 

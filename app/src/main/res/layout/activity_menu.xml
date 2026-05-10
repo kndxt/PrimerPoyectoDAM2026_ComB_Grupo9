@@ -152,7 +152,8 @@
             android:id="@+id/bntConfig"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Configuración" />
+            android:text="Configuración"
+            android:backgroundTint="@color/black"/>
 
         <!-- CARD 3 -->
 
