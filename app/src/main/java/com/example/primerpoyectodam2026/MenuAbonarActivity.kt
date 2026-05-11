@@ -10,9 +10,15 @@ class MenuAbonarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_abonar)
 
+        val cuotaMensual = findViewById<LinearLayout>(R.id.card_socios)
+        cuotaMensual.setOnClickListener {
+            val intent = Intent(this, BuscarSocioActivity::class.java)
+            startActivity(intent)
+        }
+
         val ActiDiaria = findViewById<LinearLayout>(R.id.ActiDiaria)
         ActiDiaria.setOnClickListener {
-            val intent = Intent(this, DisciplinasActivity::class.java)
+            val intent = Intent(this, BuscarNoSocioActivity::class.java)
             startActivity(intent)
         }
     }

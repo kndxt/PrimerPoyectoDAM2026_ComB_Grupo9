@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimerPoyectoDAM2026">
         <activity
+            android:name=".PagoCuotaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PagoSocioAcreditado"
+            android:exported="false" />
+        <activity
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity

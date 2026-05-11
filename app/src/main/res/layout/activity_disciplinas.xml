@@ -240,6 +240,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:text="Siguiente" />
 
     </LinearLayout>
