@@ -6,6 +6,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp">
+        android:background="@color/white">
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,11 +70,12 @@
 
                 <!-- Nombre del cliente-->
                 <TextView
+                    android:id="@+id/tvNombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="20dp"
-                    android:text="Matias Cortez"
+                    android:text="Nombre Apellido"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -144,6 +146,30 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Alguien@gmail.com"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- Estado cuota -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Cuota:"
+                        android:textColor="#666666"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvEstadoCuota"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estado cuota"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>

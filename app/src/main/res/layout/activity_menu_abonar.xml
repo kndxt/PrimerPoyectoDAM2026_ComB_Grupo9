@@ -15,6 +15,7 @@
         android:layout_marginBottom="30dp"
         android:gravity="center"
         android:text="Abonar"
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -48,6 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cuota Mensual"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -55,6 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Socios"
+                android:textColor="@color/black"
                 android:textSize="16sp" />
 
 
@@ -89,6 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Actividad Diaria"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -96,6 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No Socios"
+                android:textColor="@color/black"
                 android:textSize="16sp" />
 
 

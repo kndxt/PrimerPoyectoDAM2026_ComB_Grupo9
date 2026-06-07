@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:orientation="vertical"
+    android:background="@color/white"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
@@ -14,6 +15,7 @@
         android:text="Buscar"
         android:textSize="15sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:gravity="center"/>
 
     <TextView
@@ -33,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
         android:hint="123456789"
         />
 
@@ -41,8 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:entries="@array/nombres_personas"/>
+        android:layout_marginBottom="10dp"/>
 
     <Button
         android:id="@+id/btnBuscarPersona"
@@ -50,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Buscar"
+        android:textColor="@color/white"
         android:backgroundTint="@color/black"/>
 
 </LinearLayout>

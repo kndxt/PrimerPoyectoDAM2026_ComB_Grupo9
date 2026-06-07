@@ -10,77 +10,241 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
+import android.widget.CheckBox
+import android.widget.Spinner
+import com.example.primerpoyectodam2026.dao.PersonaDao
+import com.example.primerpoyectodam2026.model.Persona
+import com.example.primerpoyectodam2026.dao.SuscripcionDao
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        val cardSocios = findViewById<LinearLayout>(R.id.cardRegistro)
-        cardSocios.setOnClickListener {
-            //Toast.makeText(this, "Entrando a Socios", Toast.LENGTH_SHORT).show()
+        val tipoPersona =
+            intent.getStringExtra("TIPO_PERSONA")
 
-            val vista = layoutInflater.inflate(R.layout.dialog_registro, null) //objeto para convertir layout en vistas
+        val personaId =
+            intent.getIntExtra("PERSONA_ID", 0)
 
-            val etNombre = vista.findViewById<EditText>(R.id.etNombre)
+        val nombre =
+            intent.getStringExtra("PERSONA_NOMBRE") ?: ""
 
-            val dialog = AlertDialog.Builder(this)
-                .setTitle("Registro")
-                .setView(vista)
-                .setPositiveButton("Guardar") {_, _ ->
-                    val nombreToString = etNombre.text.toString()
+        val apellido =
+            intent.getStringExtra("PERSONA_APELLIDO") ?: ""
 
-                    Toast.makeText(this, "Socio: $nombreToString", Toast.LENGTH_LONG).show()
+        val email =
+            intent.getStringExtra("PERSONA_EMAIL") ?: ""
 
-                    val intento = Intent(this, CredencialActivity::class.java)
-                    startActivity(intent)
-                }
-                .setNegativeButton("Cancelar", null)
-                .create()
-            dialog.show()
+        val telefono =
+            intent.getStringExtra("PERSONA_TELEFONO") ?: ""
 
+        val cardSocios =
+            findViewById<LinearLayout>(R.id.cardRegistro)
+
+        val cardVencimientos =
+            findViewById<LinearLayout>(R.id.cardVencimientos)
+
+        val cardAbono =
+            findViewById<LinearLayout>(R.id.cardAbono)
+
+        val btnIrConfig =
+            findViewById<Button>(R.id.bntConfig)
+
+        val cardCredencial =
+            findViewById<LinearLayout>(R.id.cardCredencial)
+
+        when (tipoPersona) {
+
+            "SOCIO" -> {
+
+                cardSocios.visibility =
+                    android.view.View.GONE
+
+                cardVencimientos.visibility =
+                    android.view.View.GONE
+
+                cardAbono.visibility =
+                    android.view.View.GONE
+
+                btnIrConfig.visibility =
+                    android.view.View.GONE
+            }
+
+            "ADMIN" -> {
+
+                cardCredencial.visibility =
+                    android.view.View.GONE
+            }
         }
 
-        val cardVencimientos = findViewById<LinearLayout>(R.id.cardVencimientos)
+        cardSocios.setOnClickListener {
+
+            val vista =
+                layoutInflater.inflate(
+                    R.layout.dialog_registro,
+                    null
+                )
+
+            val etNombre =
+                vista.findViewById<EditText>(R.id.etNombre)
+
+            val etApellido =
+                vista.findViewById<EditText>(R.id.etApellido)
+
+            val etDni =
+                vista.findViewById<EditText>(R.id.etDni)
+
+            val etEmail =
+                vista.findViewById<EditText>(R.id.etEmail)
+
+            val cbAptoFisico =
+                vista.findViewById<CheckBox>(R.id.etAptoFisico)
+
+            val spinner =
+                vista.findViewById<Spinner>(R.id.idOpciones)
+
+            val personaDao =
+                PersonaDao(this)
+
+            AlertDialog.Builder(this)
+                .setTitle("Registro")
+                .setView(vista)
+                .setPositiveButton("Guardar") { _, _ ->
+
+                    val tipoPersonaNueva =
+                        when (spinner.selectedItem.toString()) {
+                            "Socio" -> "SOCIO"
+                            "No socio" -> "NO_SOCIO"
+                            else -> ""
+                        }
+
+                    val persona = Persona(
+                        nombre = etNombre.text.toString(),
+                        apellido = etApellido.text.toString(),
+                        dni = etDni.text.toString(),
+                        telefono = "",
+                        email = etEmail.text.toString(),
+                        aptoFisico = cbAptoFisico.isChecked,
+                        activo = true,
+                        tipoPersona = tipoPersonaNueva,
+                        fechaInscripcion = null
+                    )
+
+                    val resultado =
+                        personaDao.guardarPersona(persona)
+
+                    if (resultado > 0) {
+
+                        Toast.makeText(
+                            this,
+                            "Persona registrada correctamente",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                    } else {
+
+                        Toast.makeText(
+                            this,
+                            "Error al registrar",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+                .setNegativeButton("Cancelar", null)
+                .show()
+        }
+
         cardVencimientos.setOnClickListener {
-            // Datos harcodeados (Simulación de BD)
-            val listaPersonas = listOf(
-                "Juan Pérez - Pendiente",
-                "María García - Pagado",
-                "Carlos Rodríguez - Vencido",
-                "Ana Martínez - Pendiente",
-                "Luis Fernández - Pagado"
+
+            val suscripcionDao =
+                SuscripcionDao(this)
+
+            val listaPersonas =
+                suscripcionDao.obtenerVencimientos()
+
+            if (listaPersonas.isEmpty()) {
+
+                Toast.makeText(
+                    this,
+                    "No existen vencimientos para el día de hoy.",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                return@setOnClickListener
+            }
+
+            val vista =
+                layoutInflater.inflate(
+                    R.layout.dialog_vencimientos,
+                    null
+                )
+
+            val lvPersonas =
+                vista.findViewById<ListView>(
+                    R.id.lvPersonas
+                )
+
+            val adapter = ArrayAdapter(
+                this,
+                android.R.layout.simple_list_item_1,
+                listaPersonas
             )
 
-            val vista = layoutInflater.inflate(R.layout.dialog_vencimientos, null)
-            val lvPersonas = vista.findViewById<ListView>(R.id.lvPersonas)
-
-            // Adaptador para la lista
-            val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listaPersonas)
             lvPersonas.adapter = adapter
 
             val dialog = AlertDialog.Builder(this)
-                .setTitle("Vencimientos Próximos")
+                .setTitle("Vencimientos de Hoy")
                 .setView(vista)
                 .setPositiveButton("Cerrar", null)
                 .create()
+
             dialog.show()
-
-
         }
 
-        //Prueba de configuración
-        val btnIrConfig = findViewById<Button>(R.id.bntConfig)
         btnIrConfig.setOnClickListener {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
 
-        val cardAbono = findViewById<LinearLayout>(R.id.cardAbono)
-        cardAbono.setOnClickListener{
+        cardAbono.setOnClickListener {
             val intent = Intent(this, MenuAbonarActivity::class.java)
             startActivity(intent)
+        }
 
+        cardCredencial.setOnClickListener {
+
+            val intent = Intent(
+                this,
+                CredencialActivity::class.java
+            )
+
+            intent.putExtra(
+                "PERSONA_ID",
+                personaId
+            )
+
+            intent.putExtra(
+                "PERSONA_NOMBRE",
+                nombre
+            )
+
+            intent.putExtra(
+                "PERSONA_APELLIDO",
+                apellido
+            )
+
+            intent.putExtra(
+                "PERSONA_EMAIL",
+                email
+            )
+
+            intent.putExtra(
+                "PERSONA_TELEFONO",
+                telefono
+            )
+
+            startActivity(intent)
         }
 
     }

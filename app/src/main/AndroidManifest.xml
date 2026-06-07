@@ -11,57 +11,75 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimerPoyectoDAM2026">
+
+        <activity
+            android:name=".PagoConfirmadoActivity"
+            android:exported="false" />
+
         <activity
             android:name=".PagoCuotaActivity"
             android:exported="false" />
-        <activity
-            android:name=".PagoSocioAcreditado"
-            android:exported="false" />
+
         <activity
             android:name=".SettingsActivity"
             android:exported="false" />
+
         <activity
             android:name=".LogoActivity"
             android:exported="false" />
+
         <activity
             android:name=".BuscarNoSocioActivity"
             android:exported="false" />
+
         <activity
             android:name=".SuscripcionActivity"
             android:exported="false" />
+
         <activity
             android:name=".BuscarPersonaActivity"
             android:exported="false" />
+
         <activity
             android:name=".BuscarSocioActivity"
             android:exported="false" />
+
         <activity
             android:name=".Pago_AcreditadoActivity"
             android:exported="false" />
+
         <activity
             android:name=".PagoActivity"
             android:exported="false" />
+
         <activity
             android:name=".DisciplinasActivity"
             android:exported="false" />
+
         <activity
             android:name=".MenuAbonarActivity"
             android:exported="false" />
+
         <activity
             android:name=".CredencialActivity"
             android:exported="false" />
+
         <activity
             android:name=".MenuActivity"
             android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
     </application>
 
 </manifest>

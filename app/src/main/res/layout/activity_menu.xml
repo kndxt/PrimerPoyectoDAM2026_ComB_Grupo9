@@ -12,6 +12,7 @@
         android:padding="16dp">
 
         <TextView
+            android:id="@+id/tvTituloMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Menu Principal"
@@ -48,15 +49,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Registrar"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColor="#000000"
                 android:textStyle="bold"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ver y gestionar socios"
+                    android:text="Registrar un nuevo cliente"
                     android:textColor="#000000"
-                    android:textSize="16dp">
+                    android:textSize="16sp">
 
                 </TextView>
 
@@ -92,14 +93,14 @@
                     android:layout_height="wrap_content"
                     android:text="Vencimientos"
                     android:textColor="#000000"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
                     android:text="Ver lista de vencimientos"
-                    android:textSize="16dp">
+                    android:textSize="16sp">
 
                 </TextView>
 
@@ -134,7 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Abonar"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textColor="#000000"
                     android:textStyle="bold"/>
                 <TextView
@@ -142,12 +143,56 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
                     android:text="Gestionar pagos"
-                    android:textSize="16dp">
+                    android:textSize="16sp">
 
                 </TextView>
 
             </LinearLayout>
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cardCredencial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="4dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="2dp"
+                app:srcCompat="@drawable/ic_person_add"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mi Credencial"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ver carnet digital"
+                    android:textColor="#000000"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/bntConfig"
             android:layout_width="match_parent"

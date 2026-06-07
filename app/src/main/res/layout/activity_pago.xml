@@ -1,73 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="16dp"
-    android:orientation="vertical"
-    android:background="@color/white"
-    >
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Metodos de Pago"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Seleccioná una opción"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="10dp"
-        android:textColor="#666666"/>
-
-    <CheckBox
-        android:id="@+id/etTransferencia"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="Transferencia"
-        android:textColor="@color/black">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    </CheckBox>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Métodos de Pago"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
 
-    <CheckBox
-        android:id="@+id/etQR"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="Escaneando QR"
-        android:textColor="@color/black">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccioná una opción"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
 
-    </CheckBox>
+        <RadioGroup
+            android:id="@+id/rgMetodoPago"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <CheckBox
-        android:id="@+id/etCredito"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="Tarjeta de Credito"
-        android:textColor="@color/black">
+            <RadioButton
+                android:id="@+id/rbTransferencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Transferencia"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp"/>
 
-    </CheckBox>
+            <RadioButton
+                android:id="@+id/rbQR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Escaneando QR"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp"/>
 
+            <RadioButton
+                android:id="@+id/rbCredito"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarjeta de Crédito"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:padding="16dp"/>
 
-    <Button
-        android:id="@+id/btnSiguiente"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Siguiente"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/black"/>
+        </RadioGroup>
 
+        <Button
+            android:id="@+id/btnSiguiente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Siguiente"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"/>
 
-</LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

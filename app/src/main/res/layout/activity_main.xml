@@ -20,6 +20,7 @@
         android:textColor="@color/black"/>
 
     <EditText
+        android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
@@ -29,9 +30,9 @@
         android:layout_marginTop="14dp">
 
     </EditText>
-    <!-- android:drawableStart="@android:drawable/ic_dialog_email"/> -->
 
     <EditText
+        android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColorHint="#7E7E7E"
