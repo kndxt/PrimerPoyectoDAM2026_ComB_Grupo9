@@ -49,6 +49,34 @@ class SuscripcionDao(context: Context) {
         return resultado
     }
 
+    fun actualizarSuscripcion(
+        personaId: Int,
+        tipoPlan: String,
+        fechaInicio: String,
+        fechaVencimiento: String
+    ): Int {
+
+        val db = dbHelper.writableDatabase
+
+        val values = ContentValues().apply {
+
+            put("tipo_plan", tipoPlan)
+            put("fecha_inicio", fechaInicio)
+            put("fecha_vencimiento", fechaVencimiento)
+        }
+
+        val filasActualizadas = db.update(
+            "suscripciones",
+            values,
+            "persona_id = ?",
+            arrayOf(personaId.toString())
+        )
+
+        db.close()
+
+        return filasActualizadas
+    }
+
     fun obtenerVencimientos(): List<String> {
 
         val lista = mutableListOf<String>()
@@ -104,9 +132,24 @@ class SuscripcionDao(context: Context) {
                 !fechaVencimiento.after(hoy)
             ) {
 
-                lista.add(
-                    "$nombre $apellido - Vence: $fechaVencimientoTexto"
-                )
+                val mensaje =
+
+                    if (fechaVencimiento == hoy) {
+
+                        "$nombre $apellido - VENCE HOY"
+
+                    } else {
+
+                        val diferenciaMillis =
+                            hoy.time - fechaVencimiento.time
+
+                        val diasAtraso =
+                            diferenciaMillis / (1000 * 60 * 60 * 24)
+
+                        "$nombre $apellido - Vencida hace $diasAtraso día(s)"
+                    }
+
+                lista.add(mensaje)
             }
         }
 
@@ -127,6 +170,8 @@ class SuscripcionDao(context: Context) {
         SELECT fecha_vencimiento
         FROM suscripciones
         WHERE persona_id = ?
+        ORDER BY id DESC
+        LIMIT 1
         """.trimIndent(),
             arrayOf(personaId.toString())
         )

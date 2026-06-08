@@ -29,23 +29,11 @@
             android:exported="false" />
 
         <activity
-            android:name=".BuscarNoSocioActivity"
-            android:exported="false" />
-
-        <activity
             android:name=".SuscripcionActivity"
             android:exported="false" />
 
         <activity
             android:name=".BuscarPersonaActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".BuscarSocioActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".Pago_AcreditadoActivity"
             android:exported="false" />
 
         <activity

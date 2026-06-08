@@ -122,16 +122,27 @@ class PagoActivity : AppCompatActivity() {
                             calendar.time
                         )
 
-                    val suscripcion = Suscripcion(
-                        personaId = personaId,
-                        tipoPlan = plan ?: "",
-                        fechaInicio = fechaActual,
-                        fechaVencimiento = fechaVencimiento
-                    )
+                    val filasActualizadas =
+                        suscripcionDao.actualizarSuscripcion(
+                            personaId,
+                            plan ?: "",
+                            fechaActual,
+                            fechaVencimiento
+                        )
 
-                    suscripcionDao.guardarSuscripcion(
-                        suscripcion
-                    )
+                    if (filasActualizadas == 0) {
+
+                        val suscripcion = Suscripcion(
+                            personaId = personaId,
+                            tipoPlan = plan ?: "",
+                            fechaInicio = fechaActual,
+                            fechaVencimiento = fechaVencimiento
+                        )
+
+                        suscripcionDao.guardarSuscripcion(
+                            suscripcion
+                        )
+                    }
                 }
             }
 

@@ -2,10 +2,8 @@ package com.example.primerpoyectodam2026
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.primerpoyectodam2026.dao.PersonaDao
@@ -17,7 +15,6 @@ class BuscarPersonaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_buscar_persona)
 
         val txtDni = findViewById<EditText>(R.id.txtDocumentoPersona)
-        val lvPersonas = findViewById<ListView>(R.id.lvPersonas)
         val btnBuscar = findViewById<Button>(R.id.btnBuscarPersona)
 
         val personaDao = PersonaDao(this)
@@ -26,7 +23,8 @@ class BuscarPersonaActivity : AppCompatActivity() {
 
         btnBuscar.setOnClickListener {
 
-            val dni = txtDni.text.toString()
+            val dni =
+                txtDni.text.toString().trim()
 
             if (dni.isBlank()) {
 
@@ -35,8 +33,6 @@ class BuscarPersonaActivity : AppCompatActivity() {
                     "Ingrese un DNI",
                     Toast.LENGTH_SHORT
                 ).show()
-
-                lvPersonas.adapter = null
 
                 return@setOnClickListener
             }
@@ -48,8 +44,6 @@ class BuscarPersonaActivity : AppCompatActivity() {
                     "El DNI debe contener exactamente 8 números",
                     Toast.LENGTH_SHORT
                 ).show()
-
-                lvPersonas.adapter = null
 
                 return@setOnClickListener
             }
@@ -69,8 +63,6 @@ class BuscarPersonaActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
 
-                    lvPersonas.adapter = null
-
                     return@setOnClickListener
                 }
 
@@ -85,23 +77,8 @@ class BuscarPersonaActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
 
-                    lvPersonas.adapter = null
-
                     return@setOnClickListener
                 }
-
-                val resultado = listOf(
-                    "Nombre: ${persona.nombre}",
-                    "Apellido: ${persona.apellido}",
-                    "DNI: ${persona.dni}",
-                    "Tipo: ${persona.tipoPersona}"
-                )
-
-                lvPersonas.adapter = ArrayAdapter(
-                    this,
-                    android.R.layout.simple_list_item_1,
-                    resultado
-                )
 
                 val destino =
                     if (tipoPago == "CUOTA")
@@ -125,8 +102,6 @@ class BuscarPersonaActivity : AppCompatActivity() {
                     "Persona no encontrada",
                     Toast.LENGTH_SHORT
                 ).show()
-
-                lvPersonas.adapter = null
             }
         }
     }

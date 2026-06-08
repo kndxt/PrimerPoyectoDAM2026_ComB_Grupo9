@@ -39,13 +39,6 @@
         android:hint="123456789"
         />
 
-    <ListView
-        android:id="@+id/lvPersonas"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"/>
-
     <Button
         android:id="@+id/btnBuscarPersona"
         android:layout_width="match_parent"

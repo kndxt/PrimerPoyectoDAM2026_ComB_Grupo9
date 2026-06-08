@@ -202,14 +202,6 @@ import android.database.sqlite.SQLiteOpenHelper
         private fun insertarSuscripcionesIniciales(
             db: SQLiteDatabase
         ) {
-
-            db.execSQL("""
-        INSERT INTO suscripciones
-        (persona_id,tipo_plan,fecha_inicio,fecha_vencimiento)
-        VALUES
-        (1,'CONTADO','01/04/2026','01/05/2026')
-        """.trimIndent())
-
             db.execSQL("""
         INSERT INTO suscripciones
         (persona_id,tipo_plan,fecha_inicio,fecha_vencimiento)
